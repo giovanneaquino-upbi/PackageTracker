@@ -1,0 +1,110 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property.TargetFramework = net9.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PackageTracker
+build_property.ProjectDir = F:\Viisual Studio\repos\PackageTracker\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[F:/Viisual Studio/repos/PackageTracker/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/Controls/AddButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.Controls.AddButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Controls\AddButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Controls\AddButton.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/Controls/CategoryChart.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.Controls.CategoryChart.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Controls\CategoryChart.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Controls\CategoryChart.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/Controls/ProjectCardView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.Controls.ProjectCardView.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Controls\ProjectCardView.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Controls\ProjectCardView.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/Controls/TagView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.Controls.TagView.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Controls\TagView.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Controls\TagView.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/Controls/TaskView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.Controls.TaskView.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Controls\TaskView.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Controls\TaskView.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/ManageMetaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.ManageMetaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ManageMetaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ManageMetaPage.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/ProjectDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.ProjectDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ProjectDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ProjectDetailPage.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/ProjectListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.ProjectListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ProjectListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ProjectListPage.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Pages/TaskDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Pages.TaskDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\TaskDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\TaskDetailPage.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Resources/Styles/AppStyles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Resources.Styles.AppStyles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\AppStyles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\AppStyles.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[F:/Viisual Studio/repos/PackageTracker/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PackageTracker.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PackageTracker.Pages.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Rastreador de Pacotes"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,*" 
+              RowSpacing="20"
+              Padding="20"
+              VerticalOptions="Start">
+
+            <!-- Cabeçalho -->
+            <VerticalStackLayout Grid.Row="0" Spacing="10">
+                <Label Text="Rastreador Coroa e Jesus" 
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="{DynamicResource PrimaryTextColor}"/>
+
+                <Label Text="Acompanhe seus pacotes em tempo real" 
+                       FontSize="16"
+                       HorizontalOptions="Center"
+                       TextColor="{DynamicResource SecondaryTextColor}"/>
+            </VerticalStackLayout>
+
+            <!-- Área de Pesquisa -->
+            <Border Grid.Row="1" 
+                   BackgroundColor="{DynamicResource CardBackgroundColor}"
+                   Stroke="{DynamicResource CardBorderColor}"
+                   StrokeThickness="1"
+                   StrokeShape="RoundRectangle 15"
+                   Padding="20"
+                   Shadow="{x:Null}">
+
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Código de Rastreamento" 
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="{DynamicResource PrimaryTextColor}"/>
+
+                    <Entry Text="{Binding TrackingNumber}"
+                           Placeholder="Ex: BR123456789"
+                           FontSize="16"
+                           BackgroundColor="{DynamicResource EntryBackgroundColor}"
+                           TextColor="{DynamicResource PrimaryTextColor}"
+                           ClearButtonVisibility="WhileEditing"/>
+
+                    <Button Text="Rastrear Pacote" 
+                            Command="{Binding SearchCommand}"
+                            BackgroundColor="{DynamicResource PrimaryColor}"
+                            TextColor="White"
+                            FontSize="16"
+                            CornerRadius="10"
+                            HeightRequest="50"/>
+
+                    <!-- Loading Indicator -->
+                    <ActivityIndicator IsVisible="{Binding IsLoading}"
+                                     IsRunning="{Binding IsLoading}"
+                                     Color="{DynamicResource PrimaryColor}"
+                                     HorizontalOptions="Center"/>
+
+                    <!-- Mensagem de Erro -->
+                    <Label Text="{Binding ErrorMessage}"
+                           IsVisible="{Binding HasError}"
+                           TextColor="Red"
+                           FontSize="14"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Resultados -->
+            <Border Grid.Row="2" 
+                   IsVisible="{Binding HasPackage}"
+                   BackgroundColor="{DynamicResource CardBackgroundColor}"
+                   Stroke="{DynamicResource CardBorderColor}"
+                   StrokeThickness="1"
+                   StrokeShape="RoundRectangle 15"
+                   Padding="20"
+                   Shadow="{x:Null}">
+
+                <ScrollView>
+                    <VerticalStackLayout Spacing="15">
+                        <!-- Cabeçalho do Resultado -->
+                        <Grid ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Grid.Column="0" Spacing="5">
+                                <Label Text="{Binding CurrentPackage.TrackingNumber}" 
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="{DynamicResource PrimaryTextColor}"/>
+                                <Label Text="{Binding CurrentPackage.RecipientName}" 
+                                       FontSize="14"
+                                       TextColor="{DynamicResource SecondaryTextColor}"/>
+                            </VerticalStackLayout>
+
+                            <Button Grid.Column="1" 
+                                    Text="Voltar"
+                                    Command="{Binding BackCommand}"
+                                    BackgroundColor="{DynamicResource SecondaryColor}"
+                                    TextColor="White"
+                                    CornerRadius="8"
+                                    HeightRequest="40"/>
+                        </Grid>
+
+                        <!-- Status Atual -->
+                        <Border BackgroundColor="{DynamicResource StatusBackgroundColor}"
+                               Stroke="{DynamicResource StatusBorderColor}"
+                               StrokeThickness="1"
+                               StrokeShape="RoundRectangle 10"
+                               Padding="15">
+                            <VerticalStackLayout Spacing="8">
+                                <Label Text="Status Atual" 
+                                       FontSize="14"
+                                       FontAttributes="Bold"
+                                       TextColor="{DynamicResource SecondaryTextColor}"/>
+                                <Label Text="{Binding CurrentPackage.Status}" 
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="{DynamicResource PrimaryTextColor}"/>
+                                <Label Text="{Binding CurrentPackage.CurrentLocation}" 
+                                       FontSize="14"
+                                       TextColor="{DynamicResource SecondaryTextColor}"/>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Informações do Pacote -->
+                        <Grid ColumnDefinitions="*,*" 
+                              ColumnSpacing="10">
+
+                            <Border Grid.Column="0"
+                                   BackgroundColor="{DynamicResource InfoBackgroundColor}"
+                                   StrokeShape="RoundRectangle 10"
+                                   Padding="12">
+                                <VerticalStackLayout Spacing="4">
+                                    <Label Text="Data de Envio" 
+                                           FontSize="12"
+                                           TextColor="{DynamicResource SecondaryTextColor}"/>
+                                    <Label Text="{Binding CurrentPackage.ShipDate, StringFormat='{0:dd/MM/yyyy}'}" 
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="{DynamicResource PrimaryTextColor}"/>
+                                </VerticalStackLayout>
+                            </Border>
+
+                            <Border Grid.Column="1"
+                                   BackgroundColor="{DynamicResource InfoBackgroundColor}"
+                                   StrokeShape="RoundRectangle 10"
+                                   Padding="12">
+                                <VerticalStackLayout Spacing="4">
+                                    <Label Text="Previsão de Entrega" 
+                                           FontSize="12"
+                                           TextColor="{DynamicResource SecondaryTextColor}"/>
+                                    <Label Text="{Binding CurrentPackage.EstimatedDelivery, StringFormat='{0:dd/MM/yyyy}'}" 
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="{DynamicResource PrimaryTextColor}"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </Grid>
+
+                        <!-- Histórico de Eventos -->
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Histórico de Eventos" 
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   TextColor="{DynamicResource PrimaryTextColor}"/>
+
+                            <CollectionView ItemsSource="{Binding CurrentPackage.Events}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BackgroundColor="{DynamicResource EventBackgroundColor}"
+                                               Stroke="{DynamicResource EventBorderColor}"
+                                               StrokeThickness="1"
+                                               StrokeShape="RoundRectangle 8"
+                                               Padding="12"
+                                               Margin="0,0,0,8">
+                                            <Grid ColumnDefinitions="Auto,*,Auto"
+                                                  RowDefinitions="Auto,Auto"
+                                                  RowSpacing="4"
+                                                  ColumnSpacing="10">
+
+                                                <!-- Ícone -->
+                                                <Label Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                                                       Text="●"
+                                                       FontSize="12"
+                                                       VerticalOptions="Center"
+                                                       TextColor="{DynamicResource PrimaryColor}"/>
+
+                                                <!-- Descrição -->
+                                                <Label Grid.Row="0" Grid.Column="1"
+                                                       Text="{Binding Description}"
+                                                       FontSize="14"
+                                                       FontAttributes="Bold"
+                                                       TextColor="{DynamicResource PrimaryTextColor}"/>
+
+                                                <!-- Data -->
+                                                <Label Grid.Row="1" Grid.Column="1"
+                                                       Text="{Binding Date, StringFormat='{0:dd/MM/yyyy HH:mm}'}"
+                                                       FontSize="12"
+                                                       TextColor="{DynamicResource SecondaryTextColor}"/>
+
+                                                <!-- Status -->
+                                                <Label Grid.Row="0" Grid.Column="2" Grid.RowSpan="2"
+                                                       Text="{Binding Status}"
+                                                       FontSize="12"
+                                                       FontAttributes="Bold"
+                                                       TextColor="{DynamicResource PrimaryColor}"
+                                                       VerticalOptions="Center"/>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Border>
+        </Grid>
+    </ScrollView>
+</ContentPage>
